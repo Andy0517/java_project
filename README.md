@@ -26,15 +26,15 @@
 
 2. Score : 有著處罰和加分的方法
 
-(1) ScoreBonus() : 進行額外的加分
+   (1) ScoreBonus() : 進行額外的加分
 
-(2) ScorePunish() : 進行扣分
+   (2) ScorePunish() : 進行扣分
 
 
 3. Person : 
 
-(1) public Person(String name){} : 印出人名
+   (1) public Person(String name){} : 印出人名
 
-(2) public Person(){} : 空白的建構子
-
-4.Rule : 印出規則
+   (2) public Person(){} : 空白的建構子
+  
+4. Rule : 印出規則
