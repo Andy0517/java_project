@@ -2,11 +2,10 @@ package Password;
 
 public class Rule {
 	public Rule(){
-		System.out.println("³W«h:³æ¤H-¨C½ü±o100¤À,¿é¤J¿ù»~¦©200¤À,");
-		System.out.println("                   ¿é¤J¿ù»~¦©200¤À,¨C5½ü¦©300¤À");
-		System.out.println("        ,¨C5½ü¦©300¤À,¦pªG©¯¹B¼Æ¦r©M²×");
-		System.out.println("                    ±K½X¤@¼Ë±o500¤À");
-		System.out.println("           Âù¤H-¿é¤JÂù¤è©m¦W¨Ã¦Û­q³Ì¤j¼Æ«K¥i¶}©l¹C");
-		System.out.println("                     À¸¡A²q¨ìªº¤H´N¿é¤F");
+		System.out.println("è¦å‰‡:å–®äºº- æ•¸å­—ç¯„åœæ˜¯1~100ï¼Œ");
+		System.out.println("         	æ¯è¼ªå¾—100åˆ†ï¼Œè¼¸å…¥éŒ¯èª¤æ‰£200åˆ†ï¼Œè¼¸å…¥éŒ¯èª¤æ‰£200åˆ†ï¼Œ");
+		System.out.println("        	æ¯5è¼ªæ‰£300åˆ†ï¼Œå¦‚æœå¹¸é‹æ•¸å­—å’Œçµ‚æ¥µå¯†ç¢¼ä¸€æ¨£å¾—500åˆ†");
+		System.out.println();
+		System.out.println("    é›™äºº- è¼¸å…¥é›™æ–¹å§“åä¸¦è‡ªè¨‚æœ€å¤§æ•¸ä¾¿å¯é–‹å§‹éŠæˆ²ï¼ŒçŒœåˆ°çš„äººå°±è¼¸äº†");
 	}
 }
