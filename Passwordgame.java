@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Passwordgame {
 
 	public static void main(String[] args) {
-		System.out.println("½Ğ¿ï¾Ü¹CÀ¸¼Ò¦¡");
-		System.out.print("1.³æ¤H¼Ò¦¡"+"\t");
-		System.out.print("2.¹ï¾Ô¼Ò¦¡"+"\t");
-		System.out.println("3.µ²§ô");
+		System.out.println("è«‹é¸æ“‡éŠæˆ²æ¨¡å¼");
+		System.out.print("1.å–®äººæ¨¡å¼"+"\t");
+		System.out.print("2.å°æˆ°æ¨¡å¼"+"\t");
+		System.out.println("3.çµæŸ");
 		
 		Rule rule = new Rule();
 		Scanner choose = new Scanner(System.in);
@@ -19,43 +19,43 @@ public class Passwordgame {
 		
 		
 		if(finalchoose==1){
-		System.out.println("½Ğ¿é¤Jª±®a¦WºÙ:");
+		System.out.println("è«‹è¼¸å…¥ç©å®¶åç¨±:");
 		Scanner name = new Scanner(System.in);
 		String player;
 		player= name.nextLine();
 		Person p = new Person(player);
 				
-		System.out.println("½Ğ¿é¤J§Aªº©¯¹B¸¹½X:");
+		System.out.println("è«‹è¼¸å…¥ä½ çš„å¹¸é‹è™Ÿç¢¼:");
 		Scanner luckynumber = new Scanner(System.in);
 		p.luckynumber= luckynumber.nextLine();
 		int lucky = Integer.parseInt(p.luckynumber);
-		if(lucky<0){
-			System.out.println("¿ù»~¡A½Ğ­«·s¶}©l");
+		if((lucky<=1)||(lucky>=100)){
+			System.out.println("éŒ¯èª¤ï¼Œè«‹é‡æ–°é–‹å§‹");
 			return;
 		}
-		System.out.println("§Aªº©¯¹B¸¹½X¬O:"+lucky);
+		System.out.println("ä½ çš„å¹¸é‹è™Ÿç¢¼æ˜¯:"+lucky);
 
 		Random r = new Random();
 		Score s = new Score();
 		int upline = 100; int input=1;int downline=1;int round=0;int dnuor=0;
 		int number = r.nextInt(100)+1;
-		while(number==100){
+		while((number==100)||(number==1)){
 			number = r.nextInt(100)+1;
 		}
 	
 
-		System.out.println("½d³ò:"+downline+"~"+upline+"\t");
+		System.out.println("ç¯„åœ:"+downline+"~"+upline+"\t");
 		int[] e= new int[100];
 		while(number!=input){
 			round=round+1;
 			
-		System.out.println("½Ğ¿é¤J¼Æ¦r:");
+		System.out.println("è«‹è¼¸å…¥æ•¸å­—:");
 		Scanner n = new Scanner(System.in);
 		input=Integer.parseInt(n.nextLine());
 		
 		if((input<=0)||(input<=downline)||(input>=upline)){
-			System.out.println("¿ù»~¡A±o¤À:-200");
-			System.out.println("½Ğ­«·s¿é¤J");
+			System.out.println("éŒ¯èª¤ï¼Œå¾—åˆ†:-200");
+			System.out.println("è«‹é‡æ–°è¼¸å…¥");
 			round=round-1;
 			dnuor=dnuor+1;
 			continue;
@@ -63,31 +63,31 @@ public class Passwordgame {
 		
 		
 		 if(input<number){
-			 System.out.println("±o¤À:100");
-				System.out.println("½d³ò:"+input+"~"+upline+"\t");
+			 System.out.println("å¾—åˆ†:100");
+				System.out.println("ç¯„åœ:"+input+"~"+upline+"\t");
 				int tmp = input;
 				input=downline;
 				 downline=tmp;
 				e[round]=tmp;
 				}
 		else if(input>number){
-				System.out.println("±o¤À:100");
-				System.out.println("½d³ò:"+downline+"~"+input+"\t");
+				System.out.println("å¾—åˆ†:100");
+				System.out.println("ç¯„åœ:"+downline+"~"+input+"\t");
 				int tmp = input;
 				input=upline;
 				upline=tmp;
 				e[round]=tmp;
 			}
 		if(round%5==0){
-			System.out.println("¹L¤F5¦^¦X¡A±o¤À:-300");
+			System.out.println("éäº†5å›åˆï¼Œå¾—åˆ†:-300");
 		}
 		s.bonus = s.ScoreBonus(number, input, lucky);
 		s.punish = s.ScorePunish(round);
 		}
 		System.out.println("Bomb!The game is over.");
-		System.out.println("¦@²q¤F"+round+"¦^¦X");
-		System.out.println("§AªºÁ`¤À¬°:"+((round*100)-(dnuor*200)+s.bonus+s.punish)+"¤À");
-		System.out.println("¾ú¥v¬ö¿ı");
+		System.out.println("å…±çŒœäº†"+round+"å›åˆ");
+		System.out.println("ä½ çš„ç¸½åˆ†ç‚º:"+((round*100)-(dnuor*200)+s.bonus+s.punish)+"åˆ†");
+		System.out.println("æ­·å²ç´€éŒ„");
 		for(int i=1;i<round;i++){
 			System.out.print(e[i]+"\t");
 		}
@@ -97,26 +97,26 @@ public class Passwordgame {
 		if(finalchoose==2){
 			Person p1 = new Person();
 			Person p2 = new Person();
-		System.out.println("½Ğ¿é¤Jª±®a1ªº¦WºÙ:");
+		System.out.println("è«‹è¼¸å…¥ç©å®¶1çš„åç¨±:");
 		Scanner name1 = new Scanner(System.in);
 		p1.name= name1.nextLine();
 		
 		
-		System.out.println("½Ğ¿é¤Jª±®a2ªº¦WºÙ:");
+		System.out.println("è«‹è¼¸å…¥ç©å®¶2çš„åç¨±:");
 		Scanner name2 = new Scanner(System.in);
 		p2.name=name2.nextLine();
 		
 				
-		System.out.print("ª±®a1ªº¦WºÙ¬°:"+p1.name+"\t");
-		System.out.println("ª±®a2ªº¦WºÙ¬°:"+p2.name);
+		System.out.print("ç©å®¶1çš„åç¨±ç‚º:"+p1.name+"\t");
+		System.out.println("ç©å®¶2çš„åç¨±ç‚º:"+p2.name);
 		
-		System.out.println("½Ğ¿é¤J³Ì¤jªº¼Æ¦r:");
+		System.out.println("è«‹è¼¸å…¥æœ€å¤§çš„æ•¸å­—:");
 		Scanner number = new Scanner(System.in);
 		String max;
 		max = number.nextLine();
 		int upline = Integer.parseInt(max);
 		if(upline<=0){
-			System.out.println("¿ù»~¡A½Ğ­«·s¶}©l");
+			System.out.println("éŒ¯èª¤ï¼Œè«‹é‡æ–°é–‹å§‹");
 			return;
 		}
 		Random r = new Random();
@@ -127,31 +127,31 @@ public class Passwordgame {
 		}
 		System.out.println(upline);
 
-		System.out.println("½d³ò:"+downline+"~"+upline+"\t");
+		System.out.println("ç¯„åœ:"+downline+"~"+upline+"\t");
 		int[] e= new int[upline];
 		while(num!=input){
 			round=round+1;
 			
-		System.out.println("½Ğ¿é¤J¼Æ¦r:");
+		System.out.println("è«‹è¼¸å…¥æ•¸å­—:");
 		Scanner n = new Scanner(System.in);
 		input=Integer.parseInt(n.nextLine());
 		
 		if((input<=0)||(input<=downline)||(input>=upline)){
-			System.out.println("½Ğ­«·s¿é¤J");
+			System.out.println("è«‹é‡æ–°è¼¸å…¥");
 			round=round-1;
 			continue;
 		}
 		
 		
 		 if(input<num){
-				System.out.println("½d³ò:"+input+"~"+upline+"\t");
+				System.out.println("ç¯„åœ:"+input+"~"+upline+"\t");
 				int tmp = input;
 				input=downline;
 				 downline=tmp;
 				e[round]=tmp;
 				}
 		else if(input>num){
-				System.out.println("½d³ò:"+downline+"~"+input+"\t");
+				System.out.println("ç¯„åœ:"+downline+"~"+input+"\t");
 				int tmp = input;
 				input=upline;
 				upline=tmp;
@@ -161,20 +161,19 @@ public class Passwordgame {
 				}
 		
 		if(round%2==0){
-			System.out.println(p1.name+"Àò³Ó");
+			System.out.println(p1.name+"ç²å‹");
 		}
 		else if(round%2==1){
-			System.out.println(p2.name+"Àò³Ó");
+			System.out.println(p2.name+"ç²å‹");
 		}
 		
 	
 	
 }
 		if(finalchoose==3){
-			System.out.println("ÙTÙTÅo~");
+			System.out.println("æ°æ°å›‰~");
 			return;
 		}
 	}
 	}	
 	
-
